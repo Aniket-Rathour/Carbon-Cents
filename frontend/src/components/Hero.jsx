@@ -31,7 +31,7 @@ const HeroSection = () => {
             </h2>
             <p className="mt-4 text-6xl md:text-2xl max-w-md">
               With Carbon Cents, every green choice earns rewards,
-               strengthens communities, and drives real impact through gamified sustainability.
+              strengthens communities, and drives real impact through gamified sustainability.
             </p>
           </div>
         </main>
