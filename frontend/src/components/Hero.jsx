@@ -30,7 +30,8 @@ const HeroSection = () => {
               CarbonCents
             </h2>
             <p className="mt-4 text-6xl md:text-2xl max-w-md">
-              Available 24/7 in Hindi and English because crops don't sleep, and neither do we!
+              With Carbon Cents, every green choice earns rewards,
+               strengthens communities, and drives real impact through gamified sustainability.
             </p>
           </div>
         </main>
