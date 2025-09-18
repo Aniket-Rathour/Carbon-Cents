@@ -335,7 +335,31 @@ function RealHome() {
                                             );
                                         })}
                                     </div>
-                                    {/* Content for each day will go here */}
+                                    {/* Event Cards Container */}
+                                    <div className="relative flex-grow">
+                                        {/* Card 1 */}
+                                        <div className="absolute bg-black text-white rounded-lg p-2 text-xs flex flex-col justify-between"
+                                            style={{ left: `calc(100% / 6 * 0.5)`, width: `calc(100% / 6 * 3.5)`, top: '-1rem', height: '3rem' }}>
+                                            <div className="flex justify-between items-start">
+                                                <div>
+                                                    <p className="font-bold">Team Meeting</p>
+                                                    <p>Project discussion</p>
+                                                </div>
+                                                <img src="https://preview.redd.it/post-your-silly-cat-selfies-v0-9frjxiht4ehe1.jpeg?auto=webp&s=e79f644b89b2592cbdcae7b766ccb8b4b27bb6b0" alt="silly cat" className="w-8 h-8 rounded-full object-cover" />
+                                            </div>
+                                        </div>
+                                        {/* Card 2 */}
+                                        <div className="absolute bg-white text-black rounded-lg p-2 text-xs flex flex-col justify-between"
+                                            style={{ left: `calc(100% / 6 * 2)`, width: `calc(100% / 6 * 1.5)`, top: '3rem', height: '3rem' }}>
+                                            <div className="flex justify-between items-start">
+                                                <div>
+                                                    <p className="font-bold">Client Call</p>
+                                                    <p>Discuss Q4 strategy</p>
+                                                </div>
+                                                <img src="https://i.pinimg.com/736x/1b/fc/e9/1bfce97a85aecdd0c0a0cd48348c15ef.jpg" alt="cat in box" className="w-8 h-8 rounded-full object-cover" />
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>                            </div>
                         </div>
                     </div>
