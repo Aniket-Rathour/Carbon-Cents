@@ -374,9 +374,9 @@ function RealHome() {
                         <div className="mt-4 flex flex-col space-y-0">
                             {/* Text Labels */}
                             <div className="flex justify-between text-xs font-light mb-1">
-                                <p>Yellow 30%</p>
-                                <p>Black 25%</p>
-                                <p>Gray 0%</p>
+                                <p>30%</p>
+                                <p>25%</p>
+                                <p>0%</p>
                             </div>
                             {/* Cards */}
                             <div className="flex">
