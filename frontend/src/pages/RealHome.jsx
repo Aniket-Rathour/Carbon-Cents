@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import Navigation from '../components/Navigation';
 
-import { Users, UserPlus, Desktop, CaretDown } from '@phosphor-icons/react';
+import { Users, UserPlus, Desktop, CaretDown, ArrowUpRight } from '@phosphor-icons/react';
 
 const FAQItem = ({ index, question, answer, openQuestionIndex, setOpenQuestionIndex }) => {
   const isOpen = openQuestionIndex === index;
 
   return (
-    <div className="border-b border-dashed border-gray-200 py-2 ">
+    <div className="border-b border-dashed border-gray-200 py-2 w-full">
       <button
         className="flex justify-between items-center w-full cursor-pointer"
         onClick={() => setOpenQuestionIndex(isOpen ? null : index)}
@@ -20,6 +20,42 @@ const FAQItem = ({ index, question, answer, openQuestionIndex, setOpenQuestionIn
           {answer}
         </div>
       )}
+    </div>
+  );
+};
+
+const WeeklyActivityChart = () => {
+  const activityData = [
+    { day: 'S', height: 'h-8', color: 'bg-gray-300' },
+    { day: 'M', height: 'h-12', color: 'bg-gray-300' },
+    { day: 'T', height: 'h-16', color: 'bg-gray-300' },
+    { day: 'W', height: 'h-24', color: 'bg-yellow-400', timer: '2h 30m' }, // Longest bar
+    { day: 'T', height: 'h-10', color: 'bg-gray-300' },
+    { day: 'F', height: 'h-14', color: 'bg-gray-300' },
+    { day: 'S', height: 'h-6', color: 'bg-gray-300' },
+  ];
+
+  return (
+    <div className="flex flex-col items-center">
+      {/* Bars */}
+      <div className="flex items-end space-x-2 h-24"> {/* Fixed height for bars container */}
+        {activityData.map((item, index) => (
+          <div key={index} className={`relative w-4 rounded-full ${item.color} ${item.height}`}>
+            {item.timer && (
+              <div className="absolute -top-8 left-1/2 -translate-x-1/2 bg-yellow-400 text-white text-xs px-2 py-1 rounded-md">
+                {item.timer}
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+
+      {/* Days */}
+      <div className="flex justify-between w-full mt-2">
+        {activityData.map((item, index) => (
+          <p key={index} className="text-xs text-gray-500">{item.day}</p>
+        ))}
+      </div>
     </div>
   );
 };
@@ -120,8 +156,8 @@ function RealHome() {
             </div>
 
             {/* Bottom Card */}
-            <div className="flex-1 bg-white rounded-4xl p-4">
-              <div className="flex flex-col space-y-2 justify-center">
+            <div className="flex-1 bg-white/80 rounded-4xl p-4 backdrop-blur-sm">
+              <div className="flex flex-col space-y-2 items-center h-full">
                 {(() => {
                   const [openQuestionIndex, setOpenQuestionIndex] = useState(null);
                   const faqs = [
@@ -146,8 +182,43 @@ function RealHome() {
           </div>
 
           {/* Middle Column (double size) */}
-          <div className="flex-2 bg-white rounded-4xl p-4 h-full">
-            Middle Column
+          <div className="flex-2 flex flex-col rounded-4xl space-y-1 h-full">
+            {/* Top Half */}
+            <div className="flex-1 flex space-x-1 ">
+              {/* Top-Left Card */}
+              <div className="flex-1 bg-white/80 rounded-4xl p-4 backdrop-blur-sm flex flex-col">
+                {/* Top row: Progress and Icon */}
+                <div className="flex justify-between items-center">
+                  <p className="text-lg font-light">Progress</p>
+                  <div className="bg-white rounded-full p-1">
+                    <ArrowUpRight size={20} />
+                  </div>
+                </div>
+
+                {/* Middle row: Big number and Work Time / thisWeek */}
+                <div className="flex items-end">
+                  <p className="text-5xl font-light">6.1h</p>
+                  <div className="flex flex-col ml-2">
+                    <p className="text-sm font-light">Work Time</p>
+                    <p className="text-xs text-gray-500 font-light">thisWeek</p>
+                  </div>
+                </div>
+
+                {/* Bar Chart Component */}
+                <div className="mt-4">
+                  <WeeklyActivityChart />
+                </div>
+              </div>
+              {/* Top-Right Card */}
+              <div className="flex-1 bg-white/80 rounded-4xl p-4 backdrop-blur-sm">
+                Top-Right Card
+              </div>
+            </div>
+
+            {/* Bottom Half */}
+            <div className="flex-1 bg-white/80 rounded-4xl backdrop-blur-sm">
+              Bottom Half Card
+            </div>
           </div>
 
           {/* Right Column */}
