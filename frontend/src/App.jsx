@@ -23,7 +23,7 @@ import Footer from './components/Footer';
 import Accreditation from './pages/Accreditation';
 import Nav from './components/Header';
 import About from './pages/About';
-
+import RealHome from './pages/RealHome';
 
 
 function App() {
@@ -31,7 +31,7 @@ function App() {
   
 
   // Pages where Navbar & Footer should be hidden
-  const hideLayout = ["/signin", "/signup"].includes(location.pathname)
+  const hideLayout = ["/signin", "/signup","/"].includes(location.pathname)
   
 
   return (
@@ -40,7 +40,8 @@ function App() {
       {!hideLayout && <Nav></Nav>}
 
       <Routes>
-        <Route path="/" element={<HomePage></HomePage>}></Route>
+        <Route path="/landing" element={<HomePage></HomePage>}></Route>
+        <Route path="/" element={<RealHome></RealHome>}></Route>
         {/* <Route path="/LandingPage" element={<LandingPage></LandingPage>}></Route> */}
         <Route path="/Contact" element={<Contact></Contact>}></Route>
         <Route path="/Dashbord" element={<Dashbord></Dashbord>}></Route>
