@@ -1,6 +1,8 @@
 import React from 'react';
 import Navigation from '../components/Navigation';
 
+import { Users, UserPlus, Desktop } from '@phosphor-icons/react';
+
 function RealHome() {
   return (
     <div className="min-h-screen bg-[radial-gradient(ellipse_at_bottom_right,#fff59d,#F3F4F6)]">
@@ -43,8 +45,36 @@ function RealHome() {
             </div>
           </div>
 
-          {/* Right Side - now empty, so it will be removed */}
-          
+          {/* Right Side */}
+          <div className="flex space-x-8 self-end">
+            <div className="flex items-end">
+              <div className="flex flex-col items-center mr-1">
+                <div className="bg-black/10 backdrop-blur-sm rounded-xl p-1">
+                  <Users size={20} />
+                </div>
+                <p className="text-xs text-black mt-1">Employee</p>
+              </div>
+              <p className="text-8xl font-extralight">78</p>
+            </div>
+            <div className="flex items-end">
+              <div className="flex flex-col items-center mr-1">
+                <div className="bg-black/10 backdrop-blur-sm rounded-xl p-1">
+                  <UserPlus size={20} />
+                </div>
+                <p className="text-xs text-blackmt-1">Hiring</p>
+              </div>
+              <p className="text-8xl font-extralight">56</p>
+            </div>
+            <div className="flex items-end">
+              <div className="flex flex-col items-center mr-1">
+                <div className="bg-black/10 backdrop-blur-sm rounded-xl p-1">
+                  <Desktop size={20} />
+                </div>
+                <p className="text-xs text-black mt-1">Projects</p>
+              </div>
+              <p className="text-8xl font-extralight">203</p>
+            </div>
+          </div>
         </div>
 
       </main>
