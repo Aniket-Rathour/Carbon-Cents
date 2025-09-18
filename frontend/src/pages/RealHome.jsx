@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Navigation from '../components/Navigation';
 
-import { Users, UserPlus, Desktop, CaretDown, ArrowUpRight, Play, Pause, Alarm } from '@phosphor-icons/react';
+import { Users, UserPlus, Desktop, CaretDown, ArrowUpRight, Play, Pause, Alarm, User, CreditCard, FileArrowUp, CalendarBlank, Rocket, Check } from '@phosphor-icons/react';
 
 const FAQItem = ({ index, question, answer, openQuestionIndex, setOpenQuestionIndex }) => {
     const isOpen = openQuestionIndex === index;
@@ -295,7 +295,7 @@ function RealHome() {
                         </div>
 
                         {/* Bottom Half */}
-                        <div className="flex-1 bg-white/80 rounded-4xl backdrop-blur-sm p-4">
+                        <div className="flex-1 bg-white/70 rounded-4xl backdrop-blur-sm p-4">
                             <div className="flex justify-between items-center mb-4">
                                 <button className="bg-white rounded-full px-4 py-2 text-sm font-light">
                                     September
@@ -365,9 +365,61 @@ function RealHome() {
                     </div>
 
                     {/* Right Column */}
-                    <div className="flex-1 bg-white rounded-4xl p-4 h-full">
-                        Right Column
-                    </div>
+                    <div className="flex-1 bg-white/70 rounded-4xl p-4 h-full backdrop-blur-sm flex flex-col">
+                        <div className="flex justify-between items-center mb-4">
+                            <p className="text-3xl font-light">Onboarding</p>
+                            <p className="text-4xl font-light">18%</p>
+                        </div>
+                        {/* New section with cards */}
+                        <div className="mt-4 flex flex-col space-y-0">
+                            {/* Text Labels */}
+                            <div className="flex justify-between text-xs font-light mb-1">
+                                <p>Yellow 30%</p>
+                                <p>Black 25%</p>
+                                <p>Gray 0%</p>
+                            </div>
+                            {/* Cards */}
+                            <div className="flex">
+                                <div className="bg-yellow-400 h-8 rounded-lg" style={{ width: '50%' }}></div>
+                                <div className="bg-black h-8 rounded-lg" style={{ width: '30%' }}></div>
+                                <div className="bg-gray-700 h-8 rounded-lg" style={{ width: '20%' }}></div>
+                            </div>
+                        </div>
+                        {/* Black Card Section */}
+                        <div className="flex-grow bg-[#303030] rounded-4xl pt-8 p-4 mt-4 text-white">
+                            {/* Top section of Black Card */}
+                            <div className="flex justify-between items-center mb-4">
+                                <p className="text-lg font-light">Onboarding Task</p>
+                                <p className="text-lg font-light">2/8</p>
+                            </div>
+                            {/* Task List */}
+                            <div className="flex flex-col space-y-6">
+                                {[
+                                    { id: 1, text: 'Complete profile', selected: true, iconBg: 'bg-gray-700', icon: User },
+                                    { id: 2, text: 'Set up payment', selected: false, iconBg: 'bg-white', icon: CreditCard },
+                                    { id: 3, text: 'Upload documents', selected: false, iconBg: 'bg-white', icon: FileArrowUp },
+                                    { id: 4, text: 'Attend orientation', selected: false, iconBg: 'bg-white', icon: CalendarBlank },
+                                    { id: 5, text: 'Start first project', selected: false, iconBg: 'bg-white', icon: Rocket },
+                                ].map(task => {
+                                    const IconComponent = task.icon;
+                                    return (
+                                        <div key={task.id} className="flex items-center justify-between">
+                                            <div className="flex items-center">
+                                                <div className={`w-12 h-12 rounded-full flex items-center justify-center mr-2 ${task.iconBg}`}>
+                                                    <IconComponent size={24} className={`${task.selected ? 'text-gray-400' : 'text-black'}`} />
+                                                </div>
+                                                <p className={`${task.selected ? 'line-through text-gray-400' : 'text-white'} text-base`}>{task.text}</p>
+                                            </div>
+                                            <div className={`w-6 h-6 rounded-full flex items-center justify-center ${task.selected ? 'bg-yellow-400' : 'bg-gray-700'}`}>
+                                                {task.selected && (
+                                                    <Check size={12} weight="bold" className="text-black" />
+                                                )}
+                                            </div>
+                                        </div>
+                                    );
+                                })}
+                            </div>
+                        </div>                        </div>
                 </div>
 
             </main>
