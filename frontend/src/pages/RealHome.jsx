@@ -26,26 +26,29 @@ const FAQItem = ({ index, question, answer, openQuestionIndex, setOpenQuestionIn
 
 const WeeklyActivityChart = () => {
   const activityData = [
-    { day: 'S', height: 'h-8', color: 'bg-gray-300' },
-    { day: 'M', height: 'h-12', color: 'bg-gray-300' },
-    { day: 'T', height: 'h-16', color: 'bg-gray-300' },
-    { day: 'W', height: 'h-24', color: 'bg-yellow-400', timer: '2h 30m' }, // Longest bar
-    { day: 'T', height: 'h-10', color: 'bg-gray-300' },
-    { day: 'F', height: 'h-14', color: 'bg-gray-300' },
-    { day: 'S', height: 'h-6', color: 'bg-gray-300' },
+    { day: 'S', height: 'h-8', color: 'bg-gray-300' }, // Sunday gray
+    { day: 'M', height: 'h-12', color: 'bg-black' }, // Monday black
+    { day: 'T', height: 'h-16', color: 'bg-black' }, // Tuesday black
+    { day: 'W', height: 'h-10', color: 'bg-black' }, // Wednesday black
+    { day: 'T', height: 'h-10', color: 'bg-black' }, // Thursday black
+    { day: 'F', height: 'h-24', color: 'bg-yellow-400', timer: '2h 30m' }, // Friday yellow
+    { day: 'S', height: 'h-6', color: 'bg-gray-300' }, // Saturday gray
   ];
 
   return (
     <div className="flex flex-col items-center">
       {/* Bars */}
-      <div className="flex items-end space-x-2 h-24"> {/* Fixed height for bars container */}
+      <div className="flex items-end justify-between w-full h-24"> {/* Fixed height for bars container */}
         {activityData.map((item, index) => (
-          <div key={index} className={`relative w-4 rounded-full ${item.color} ${item.height}`}>
-            {item.timer && (
-              <div className="absolute -top-8 left-1/2 -translate-x-1/2 bg-yellow-400 text-white text-xs px-2 py-1 rounded-md">
-                {item.timer}
-              </div>
-            )}
+          <div key={index} className="flex flex-col items-center"> {/* Wrapper for bar and dot */}
+            <div className={`relative w-2 rounded-full ${item.color} ${item.height}`}>
+              {item.timer && (
+                              <div className="absolute -top-8 left-1/2 -translate-x-1/2 bg-yellow-400 text-white text-xs py-1 rounded-full min-w-[4rem] text-center">
+                                {item.timer}
+                              </div>              )}
+            </div>
+            {/* Dot below the bar */}
+            <div className={`w-2 h-2 rounded-full ${item.color} ${item.day === 'S' || item.day === 'T' ? 'mt-3' : 'mt-1'}`}></div> {/* Dot with same color and width, conditional mt */}
           </div>
         ))}
       </div>
@@ -186,7 +189,7 @@ function RealHome() {
             {/* Top Half */}
             <div className="flex-1 flex space-x-1 ">
               {/* Top-Left Card */}
-              <div className="flex-1 bg-white/80 rounded-4xl p-4 backdrop-blur-sm flex flex-col">
+              <div className="flex-1 bg-white/70 rounded-4xl p-8 backdrop-blur-sm flex flex-col h-full">
                 {/* Top row: Progress and Icon */}
                 <div className="flex justify-between items-center">
                   <p className="text-lg font-light">Progress</p>
@@ -196,7 +199,7 @@ function RealHome() {
                 </div>
 
                 {/* Middle row: Big number and Work Time / thisWeek */}
-                <div className="flex items-end">
+                <div className="flex items-end h-full">
                   <p className="text-5xl font-light">6.1h</p>
                   <div className="flex flex-col ml-2">
                     <p className="text-sm font-light">Work Time</p>
