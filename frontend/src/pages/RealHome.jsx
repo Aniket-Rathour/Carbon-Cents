@@ -31,7 +31,7 @@ const WeeklyActivityChart = () => {
         { day: 'T', height: 'h-16', color: 'bg-black' }, // Tuesday black
         { day: 'W', height: 'h-10', color: 'bg-black' }, // Wednesday black
         { day: 'T', height: 'h-10', color: 'bg-black' }, // Thursday black
-        { day: 'F', height: 'h-24', color: 'bg-yellow-400', timer: '2h 30m' }, // Friday yellow
+        { day: 'F', height: 'h-24', color: 'bg-[#386237]', timer: '2h 30m' }, // Friday yellow
         { day: 'S', height: 'h-10', color: 'bg-gray-200' }, // Saturday gray
     ];
 
@@ -46,7 +46,7 @@ const WeeklyActivityChart = () => {
                     <div key={index} className="flex flex-col items-center"> {/* Wrapper for bar and dot */}
                         <div className={`relative w-2 rounded-full ${item.color} ${item.height}`}>
                             {item.timer && (
-                                <div className="absolute -top-12 left-1/2 -translate-x-1/2 bg-yellow-400 text-white text-xs px-5 py-1 rounded-full min-w-[5rem] text-center">
+                                <div className="absolute -top-12 left-1/2 -translate-x-1/2 bg-[#386237] text-white text-xs px-5 py-1 rounded-full min-w-[5rem] text-center">
                                     {item.timer}
                                 </div>)}
                         </div>
@@ -102,41 +102,41 @@ function RealHome() {
     }, []);
 
     return (
-        <div className="min-h-screen bg-[radial-gradient(ellipse_at_bottom_right,#fff59d,#F3F4F6)]">
-            <Navigation />
+        <div className="min-h-screen bg-[radial-gradient(ellipse_at_center,#E5E7EB,#000000)]">
+            
             <main className="pt-32 flex flex-col h-screen pb-8">
                 {/* Top Header Section */}
                 <div className="flex justify-between items-start mb-8 px-8">
                     {/* Left Side - now includes Interview, Hired, Project Time, and Output Text */}
                     <div>
-                        <h1 className="text-6xl font-light text-gray-900 mb-6">Welcome in, Aniket</h1>
+                        <h1 className="text-6xl font-light text-gray-50 mb-6">Welcome in, Aniket</h1>
                         <div className="flex space-x-2">
                             {/* Interview Section */}
                             <div className="flex flex-col">
-                                <p className="text-sm font-medium text-gray-700 text-left pl-2">Interview</p>
+                                <p className="text-sm font-medium text-gray-50 text-left pl-2">Gold</p>
                                 <div className="w-28 h-12 bg-[#30302E] rounded-full mt-2 flex items-center justify-start pl-2 text-white text-base font-light"> {/* Changed justify-end pr-2 to justify-start pl-2 */}
-                                    15%
+                                    16
                                 </div>
                             </div>
                             {/* Hired Section */}
                             <div className="flex flex-col">
-                                <p className="text-sm font-medium text-gray-700 text-left pl-2">Hired</p>
-                                <div className="w-28 h-12 bg-[#fed95f] rounded-full mt-2 flex items-center justify-start pl-2 text-black text-base font-light"> {/* Changed justify-end pr-2 to justify-start pl-2 */}
-                                    15%
+                                <p className="text-sm font-medium text-gray-50 text-left pl-2">Blue</p>
+                                <div className="w-28 h-12 bg-[#3473d1] rounded-full mt-2 flex items-center justify-start pl-2 text-white text-base font-light"> {/* Changed justify-end pr-2 to justify-start pl-2 */}
+                                    5
                                 </div>
                             </div>
                             {/* Project Time Section */}
                             <div className="flex flex-col">
-                                <p className="text-sm font-medium text-gray-700 text-left pl-2">Project time</p>
-                                <div className="w-96 h-12 bg-[repeating-linear-gradient(45deg,_#ffffff_0_5px,_transparent_0_10px)] rounded-full mt-2 flex items-center justify-start pl-2 text-black text-base font-light"> {/* Changed justify-end pr-2 to justify-start pl-2 */}
+                                <p className="text-sm font-medium text-gray-50 text-left pl-2">Achievement</p>
+                                <div className="w-96 h-12 bg-[repeating-linear-gradient(45deg,_#10300b_0_5px,_transparent_0_10px)] rounded-full mt-2 flex items-center justify-start pl-2 text-white text-base font-light"> {/* Changed justify-end pr-2 to justify-start pl-2 */}
                                     60%
                                 </div>
                             </div>
                             {/* Output Text Section (moved here) */}
                             <div className="flex flex-col">
-                                <p className="text-sm font-medium text-gray-700 text-left pl-2">Output text</p>
-                                <div className="w-28 h-12 border border-black rounded-full mt-2 flex items-center justify-start pl-2 text-black text-base font-light"> {/* Changed justify-end pr-2 to justify-start pl-2 */}
-                                    10%
+                                <p className="text-sm font-medium text-gray-50 text-left pl-2">Carbon Saved</p>
+                                <div className="w-28 h-12 border border-white rounded-full mt-2 flex items-center justify-start pl-2 text-black text-base font-light"> {/* Changed justify-end pr-2 to justify-start pl-2 */}
+                                    10 Ton
                                 </div>
                             </div>
                         </div>
@@ -149,27 +149,27 @@ function RealHome() {
                                 <div className="bg-black/10 backdrop-blur-sm rounded-xl p-1">
                                     <Users size={20} />
                                 </div>
-                                <p className="text-xs text-black mt-1">Employee</p>
+                                <p className="text-xs text-black mt-1">Coin Cost</p>
                             </div>
-                            <p className="text-8xl font-extralight">78</p>
+                            <p className="text-8xl font-extralight text-white">21</p>
                         </div>
                         <div className="flex items-end">
                             <div className="flex flex-col items-center mr-1">
                                 <div className="bg-black/10 backdrop-blur-sm rounded-xl p-1">
                                     <UserPlus size={20} />
                                 </div>
-                                <p className="text-xs text-blackmt-1">Hiring</p>
+                                <p className="text-xs text-blackmt-1">Solana cost</p>
                             </div>
-                            <p className="text-8xl font-extralight">56</p>
+                            <p className="text-8xl font-extralight text-white">23</p>
                         </div>
                         <div className="flex items-end">
                             <div className="flex flex-col items-center mr-1">
                                 <div className="bg-black/10 backdrop-blur-sm rounded-xl p-1">
                                     <Desktop size={20} />
                                 </div>
-                                <p className="text-xs text-black mt-1">Projects</p>
+                                <p className="text-xs text-black mt-1">Value</p>
                             </div>
-                            <p className="text-8xl font-extralight">203</p>
+                            <p className="text-8xl font-extralight text-white">483</p>
                         </div>
                     </div>
                 </div>
@@ -220,9 +220,9 @@ function RealHome() {
 
                                     {/* Work Time / thisWeek */}
                                     <div className="flex items-end h-full mt-4">
-                                        <p className="text-4xl font-light">6.1h</p>
+                                        <p className="text-4xl font-light">6.1</p>
                                         <div className="flex flex-col ml-2">
-                                            <p className="text-sm font-light">Work Time</p>
+                                            <p className="text-sm font-light">Eco Time</p>
                                             <p className="text-xs text-gray-500 font-light">thisWeek</p>
                                         </div>
                                     </div>
@@ -236,7 +236,7 @@ function RealHome() {
                             {/* Top-Right Card */}
                             <div className="flex-1 bg-white/70 rounded-4xl p-8 backdrop-blur-sm flex flex-col justify-between">
                                 <div className="flex justify-between items-center mb-4">
-                                    <p className="text-lg font-light">Time Tracker</p>
+                                    <p className="text-lg font-light">Step Tracker</p>
                                     <div className="bg-white rounded-full p-1">
                                         <ArrowUpRight size={20} />
                                     </div>
@@ -273,8 +273,8 @@ function RealHome() {
 
                                         {/* Text content */}
                                         <div className="absolute flex flex-col items-center">
-                                            <p className="text-4xl font-light">02:30</p>
-                                            <p className="text-sm font-light">Work Time</p>
+                                            <p className="text-4xl font-light">12,467</p>
+                                            <p className="text-sm font-light">Steps</p>
                                         </div>
                                     </div>                </div>
 
@@ -380,13 +380,13 @@ function RealHome() {
                             </div>
                             {/* Cards */}
                             <div className="flex">
-                                <div className="bg-yellow-400 h-8 rounded-lg" style={{ width: '50%' }}></div>
+                                <div className="bg-[#386237] h-8 rounded-lg" style={{ width: '50%' }}></div>
                                 <div className="bg-black h-8 rounded-lg" style={{ width: '30%' }}></div>
                                 <div className="bg-gray-700 h-8 rounded-lg" style={{ width: '20%' }}></div>
                             </div>
                         </div>
                         {/* Black Card Section */}
-                        <div className="flex-grow bg-[#303030] rounded-4xl pt-8 p-4 mt-4 text-white">
+                        <div className="flex-grow bg-[#575757] rounded-4xl pt-8 p-4 mt-4 text-white">
                             {/* Top section of Black Card */}
                             <div className="flex justify-between items-center mb-4">
                                 <p className="text-lg font-light">Onboarding Task</p>
@@ -410,9 +410,9 @@ function RealHome() {
                                                 </div>
                                                 <p className={`${task.selected ? 'line-through text-gray-400' : 'text-white'} text-base`}>{task.text}</p>
                                             </div>
-                                            <div className={`w-6 h-6 rounded-full flex items-center justify-center ${task.selected ? 'bg-yellow-400' : 'bg-gray-700'}`}>
+                                            <div className={`w-6 h-6 rounded-full flex items-center justify-center ${task.selected ? 'bg-[#386237]' : 'bg-gray-200'}`}>
                                                 {task.selected && (
-                                                    <Check size={12} weight="bold" className="text-black" />
+                                                    <Check size={12} weight="bold" className="text-white" />
                                                 )}
                                             </div>
                                         </div>
