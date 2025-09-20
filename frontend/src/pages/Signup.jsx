@@ -1,12 +1,18 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { GoogleLogin } from "@react-oauth/google";
+import { useNavigate } from "react-router-dom";
+
+
+
 
 
 
 function Signup() {
+  const navigate = useNavigate();
   const handleGoogleSignIn = (response) => {
     console.log(response);
+    navigate("/home")
     
   };
 

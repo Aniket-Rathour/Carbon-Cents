@@ -18,7 +18,7 @@ import About from './pages/About';
 import RealHome from './pages/RealHome';
 
 // ✅ Define your Google OAuth client ID here
-const googleClientId = "1234567890-abc123def456.apps.googleusercontent.com";
+const googleClientId = "276637808660-kk6cgaucqm3iqvqfl84lka3lha8fvcj8.apps.googleusercontent.com";
 
 function App() {
   const location = useLocation();

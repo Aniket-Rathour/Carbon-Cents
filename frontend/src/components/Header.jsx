@@ -23,7 +23,7 @@ function Nav() {
             Mechanics
           </NavLink>
           <NavLink to="/signin" className="hover:text-gray-300 transition-colors">
-            Sign In
+            Sign Up
           </NavLink>
           <NavLink to="/about" className="hover:text-gray-300 transition-colors">
             About US
